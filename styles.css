@@ -16,6 +16,7 @@
 body{
     font-family: "Roboto", sans-serif;
     background-color: var(--light-bg-color);
+    color: var(--prim-color);
 }
 
 h1, h2, h3, h4{
@@ -32,6 +33,10 @@ h1, h2, h3, h4{
     align-items: center;
 }
 
+button{
+    outline: none;
+}
+
 /*TITLE*/
 
 .title{
@@ -41,7 +46,6 @@ h1, h2, h3, h4{
 
 .title h2{
     font-size: 2rem;
-    color: var(--prim-color);
 }
 
 .title hr{
@@ -65,19 +69,106 @@ h1, h2, h3, h4{
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    width: 40rem;
+    max-width: 40rem;
+    width: 100%;
     text-align: center;
     box-shadow: var(--light-shadow);
     background-color: white;
     border-radius: 1rem;
 }
 
-
-
-.profile-picture{
+.img-container{
+    position: relative;
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.profile-picture {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+}
+
+.img-container::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--sec-color);
+    position: absolute;
+    top: -0.25rem;
+    right: -0.5rem;
+    border-radius: 50%;
+}
+
+.img-container::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: open-quote;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--sec-color);
+    color: white;
+    font-size: 3rem;
+}
+
+.name{
+    margin-bottom: 0.25rem;
+}
+
+.job{
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    color: var(--sec-color);
+    font-size: 0.9rem;
+}
+
+.review{
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.prev-next-btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 4rem;
+    margin-bottom: 1rem;
+}
+
+.btn-right, .btn-left{
+    border: none;
+    color: #49a6e971;
+    font-weight: 100;
+    cursor: pointer;
+    background-color: white;
+}
+
+.btn-random{
+    border-color: var(--sec-color);
+    border-radius: 8px;
+    padding: 4px 6px;
+    background-color: white;
+    color: var(--sec-color);
+    cursor: pointer;
+}
+
+.btn-left:hover, .btn-right:hover{
+    color: var(--sec-color);
+    transition: all 0.5s ease;
+}
+
+.btn-random:hover{
+    background-color: var(--sec-color);
+    color: var(--prim-color);
+    transition: all 0.5s ease;
 }
 
 /*REVIEW*/
