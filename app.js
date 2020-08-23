@@ -46,9 +46,36 @@ const defaultAll = function() {
 };
 
 const previous = (e) => {
+    id--;
+    if(id < 0){
+        id = reviews[reviews.length - 1].id;
+    }
+    change();
+};
 
+const next = (e) => {
+    id++;
+    if(id >= reviews.length){
+        id = 0;
+    }
+    change();
+};
+
+const change = (e) => {
+    nameCard.innerText = reviews[id].name;
+    jobCard.innerText = reviews[id].job;
+    reviewCard.innerText = reviews[id].review;
+};
+
+const random = (e) => {
+    id = Math.floor(Math.random() * reviews.length);
+    change();
 };
 
 //eventlisteners
 btnLeft.addEventListener("click", previous);
+btnRight.addEventListener("click", next);
+btnRandom.addEventListener("click", random);
+
+//defaultAll function called when page is loaded
 window.onload = defaultAll();
