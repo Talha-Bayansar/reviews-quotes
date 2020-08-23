@@ -2,6 +2,9 @@
     --prim-color: #102A42;
     --sec-color: #49A6E9;
     --letter-spacing: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --light-bg-color: #F1F5F8;
 }
 
 *{
@@ -12,6 +15,7 @@
 
 body{
     font-family: "Roboto", sans-serif;
+    background-color: var(--light-bg-color);
 }
 
 h1, h2, h3, h4{
@@ -60,9 +64,12 @@ h1, h2, h3, h4{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--prim-color);
     padding: 2rem;
     width: 40rem;
+    text-align: center;
+    box-shadow: var(--light-shadow);
+    background-color: white;
+    border-radius: 1rem;
 }
 
 
